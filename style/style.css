@@ -1,0 +1,66 @@
+*{
+    padding: p;
+    padding: 0;
+    box-sizing: border-box;
+}
+.conteiner{
+    width: 100%;
+    height: 100vh;
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #c885ff;
+    
+}
+
+.conteiner .cube{
+    width: 300px;
+    height: 300px;
+    position: relative;
+    transform: rotateX(325deg) rotateY(40deg);
+    transform-style: preserve-3d;
+    animation-name: cube;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: 1s;
+}
+.conteiner .cube .side{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #fff;
+}
+.front{
+    transform: translate3d(150px, 0, 0) rotateY(90deg);
+    background: rgb(151, 151, 151);
+}
+.back{
+    transform: translate3d(-150px, 0, 0) rotateY(90deg);
+    background: rgb(128, 228, 128)
+    
+}
+.bottom{
+    transform: translate3d(0,-150px,0) rotateX(90deg);
+    background: rgb(255, 163, 163);
+}
+.left{
+    transform: translate3d(0, 0, -150px) rotateY(0deg);
+    background: rgb(247, 207, 132);
+}
+.right{
+    transform: translate3d(0, 0, 150px) rotateY(0deg);
+    background: rgb(145, 145, 252);
+}
+@keyframes cube{
+    100%{
+     transform:  rotateX(45deg) rotateY(45deg) rotateZ(-90deg);
+    }
+}
+.top{
+    transform: translate3d(0, 150px, 0) rotateX(90deg);
+    background: rgb(224, 122, 173);
+}
